@@ -42,6 +42,9 @@ bindcode $mod+Shift+19    move container to workspace  $ws10
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
+# launch flameshot
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+
 # kill focused window
 bindsym $mod+q kill
 
