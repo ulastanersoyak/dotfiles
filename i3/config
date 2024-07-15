@@ -8,8 +8,8 @@ workspace_layout default
 
 new_window pixel 4
 
-gaps inner 10
-gaps outer 15
+gaps inner 30
+gaps outer 30
 
 floating_modifier $mod
 
@@ -199,9 +199,10 @@ exec --no-startup-id dex --autostart --environment i3
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-set $wallpaper ~/.config/wallpapers/mastermindgoredigitalart.jpg
+set $wallpaper ~/.config/wallpapers/samuraijack.jpg
 exec_always --no-startup-id feh --bg-fill $wallpaper
 exec_always --no-startup-id wal -i $wallpaper
+exec_always --no-startup-id pywalfox update 
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
