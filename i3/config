@@ -199,11 +199,10 @@ exec --no-startup-id dex --autostart --environment i3
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-set $wallpaper ~/.config/wallpapers/samuraijack.jpg
+set $wallpaper ~/.config/wallpapers/samuraijack.jpg 
 exec_always --no-startup-id feh --bg-fill $wallpaper
 exec_always --no-startup-id wal -i $wallpaper
-exec_always --no-startup-id pywalfox update 
-
+exec_always --no-startup-id pywalfoxupdate.sh
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
