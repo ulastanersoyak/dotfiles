@@ -67,11 +67,15 @@ hl.config({
         background_color        = "rgb(000000)",
         animate_manual_resizes  = true,
         vrr                     = 1,
+        -- If the lock screen (lock.qml) crashes, e.g. while monitors change on
+        -- lid close/open, let a freshly started one take over the lock instead
+        -- of leaving a dead locked screen with no way back in.
+        allow_session_lock_restore = true,
     },
     xwayland = { force_zero_scaling = true },
     cursor = {
         sync_gsettings_theme = true,
-        inactive_timeout     = 5,
+        inactive_timeout     = 0,
         -- Курсор рисуем сами, а не отдельным слоем видеокарты.
         --
         -- В «авто» на драйвере NVIDIA курсор идёт аппаратным слоем, и его

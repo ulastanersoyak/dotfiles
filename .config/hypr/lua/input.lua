@@ -1,27 +1,27 @@
 hl.config({
-    input = {
-        kb_layout  = "us,ru",
-        kb_variant = ",",
-        kb_model   = "",
-        -- Alt+Shift переключает раскладку
-        kb_options = "grp:alt_shift_toggle",
-        kb_rules   = "",
-        follow_mouse = 1,
-        sensitivity = 0,
-        touchpad = {
-            -- natural_scroll = true: содержимое следует за пальцами.
-            -- Пальцы вверх => страница листается вниз.
-            -- Если ощущается наоборот — поставь false, это единственная строка.
-            natural_scroll = true,
-            scroll_factor = 1.0,
-            disable_while_typing = true,
-            tap_to_click = true,
-            -- drag_lock оставлял кнопку «нажатой» после отпускания пальца:
-            -- выделение продолжалось само по себе, пока не тапнешь ещё раз
-            drag_lock = false,
-            clickfinger_behavior = true,
-        },
-    },
+	input = {
+		kb_layout = "us,tr",
+		kb_variant = ",",
+		kb_model = "",
+		-- Alt+Shift переключает раскладку
+		kb_options = "grp:alt_shift_toggle",
+		kb_rules = "",
+		follow_mouse = 1,
+		sensitivity = 0,
+		touchpad = {
+			-- natural_scroll = true: содержимое следует за пальцами.
+			-- Пальцы вверх => страница листается вниз.
+			-- Если ощущается наоборот — поставь false, это единственная строка.
+			natural_scroll = true,
+			scroll_factor = 1.0,
+			disable_while_typing = true,
+			tap_to_click = true,
+			-- drag_lock оставлял кнопку «нажатой» после отпускания пальца:
+			-- выделение продолжалось само по себе, пока не тапнешь ещё раз
+			drag_lock = false,
+			clickfinger_behavior = true,
+		},
+	},
 })
 
 -- ---------------------------------------------------------------- жесты

@@ -10,3 +10,4 @@ require("lua.windowrules")
 require("lua.keybindings")
 require("lua.autostart")
 require("lua.permissions")
+

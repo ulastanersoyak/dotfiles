@@ -31,6 +31,7 @@ hl.on("hyprland.start", function()
 	-- Два агента одновременно зарегистрироваться не могут.
 	-- hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("hyprsunset -t 5000")
+	hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/power_refresh.sh")
 	-- автомонтирование флешек и карт: без него раздел «Съёмные»
 	-- в проводнике не появится сам
 	hl.exec_cmd("udiskie --no-notify --no-tray")

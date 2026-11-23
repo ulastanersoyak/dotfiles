@@ -167,8 +167,15 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Switch
+-- Lid closed: lock + turn the laptop panel off (logind ignores the lid, so no suspend).
+-- Lid opened: panel back on.
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd(p.lock), { locked = true })
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd(p.lock), { locked = true })
+hl.bind("switch:on:Lid Switch", hl.dsp.dpms({ action = "off", monitor = "eDP-1" }), { locked = true })
+hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ action = "on", monitor = "eDP-1" }), { locked = true })
+-- Re-run the lock after the panel has finished modesetting: lock.sh is a no-op if
+-- the lock is still alive, and relaunches it if it crashed while the lid was shut
+-- (works together with misc.allow_session_lock_restore).
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("sleep 2 && " .. p.lock), { locked = true })
 
 
 -- Пилюля: панели открываются в ней же
