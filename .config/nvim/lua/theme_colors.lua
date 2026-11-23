@@ -1,9 +1,9 @@
 return {
-    bg = "#230f1b",
-    fg = "#c8c3c6",
-    accent = "#8B284C",
-    syntax = "#764758",
-    param = "#614951",
-    string = "#6f4b58",
-    selection = "#8B284C",
+    bg = "#0a0a17",
+    fg = "#c1c1c5",
+    accent = "#9D5F4B",
+    syntax = "#85685f",
+    param = "#6d5e59",
+    string = "#7d6760",
+    selection = "#9D5F4B",
 }

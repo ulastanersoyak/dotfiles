@@ -62,9 +62,9 @@ sed -i \
     "$HYPR/palette.conf"
 "$HYPR/scripts/palette.sh" >/dev/null 2>&1 || true
 
-# foot: palette.sh writes [colors-dark], which foot only honors when the
-# desktop portal reports dark mode. Make it unconditional.
-[ -f "$HOME/.config/foot/theme" ] && sed -i 's/^\[colors-dark\]/[colors]/' "$HOME/.config/foot/theme"
+# foot: palette.sh writes [colors-dark] and sets the portal to prefer-dark,
+# so foot honors it. [colors] would work too, but it is deprecated and foot
+# prints a warning for every line of it on startup.
 
 # ------------------------------------------------- 4. the pill (quickshell)
 echo "→ pill"

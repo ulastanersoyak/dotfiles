@@ -8,14 +8,14 @@
     "source": "arch_small",
     "padding": { "top": 3, "left": 3, "right": 4 },
     // panacea:accent
-    "color": { "1": "38;2;139;40;76", "2": "38;2;139;40;76" }
+    "color": { "1": "38;2;157;95;75", "2": "38;2;157;95;75" }
   },
 
   "display": {
     "separator": "  ",
     "color": {
       // panacea:accent
-      "keys": "38;2;139;40;76",
+      "keys": "38;2;157;95;75",
       "title": "white",
       "output": "white"
     }
