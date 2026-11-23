@@ -17,18 +17,24 @@
 !.config/hypr/
 !.config/panacea/
 !.config/quickshell/
+!.config/systemd/
 
 !.local/
 .local/*
 !.local/bin/
 .local/bin/*
 !.local/bin/wallset
+!.local/src/
+.local/src/*
+!.local/src/Panacea
+!.gitmodules
 
 .config/fish/fish_variables
 .config/fish/fish_history
 .config/hypr/lua/binds_data.lua
 .config/hypr/lua/monitors_data.lua
 .config/hypr/lua/term_data.lua
+.config/hypr/nvidia-mode
 .config/hypr/wallpaper.conf
 .config/hypr/hyprpaper.conf
 .config/hypr/wallpaper/
