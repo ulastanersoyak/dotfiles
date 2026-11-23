@@ -232,3 +232,62 @@ lua/plugins/editor.lua    telescope, oil, gitsigns, which-key, sleuth
 lua/plugins/markdown.lua  in-buffer rendering + browser preview
 lua/plugins/ui.lua        gruvbox-material + lualine
 ```
+
+## ROS2
+
+Code intelligence for ROS2 — including **custom messages** — comes from three
+pieces working together:
+
+### 1. Launch nvim from a sourced shell
+
+```bash
+source /opt/ros/$ROS_DISTRO/setup.bash
+source ~/ros2_ws/install/setup.bash   # after at least one build
+cd ~/ros2_ws && nvim
+```
+
+This matters twice over: basedpyright receives `PYTHONPATH` as `extraPaths`
+(so `from my_pkg.msg import Foo` resolves, with go-to-definition into the
+generated `.py`), and the `:Telescope ros2 *` pickers can talk to the ROS
+graph.
+
+### 2. Build with a compile database (C++)
+
+```bash
+colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+```
+
+colcon merges every package's entries into `build/compile_commands.json`,
+and clangd automatically checks `build/` directories above the file you're
+editing — no `.clangd` file or symlink needed as long as you open files from
+the workspace root. To make the flag permanent:
+
+```bash
+colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+colcon mixin update default
+colcon build --mixin compile-commands
+```
+
+### 3. Custom messages: build after editing interfaces
+
+Generated code (C++ headers in `install/<pkg>/include`, Python modules in
+`install/<pkg>/lib/python3.*/site-packages`) only exists after a build, and
+`--symlink-install` does **not** keep generated code live. After changing a
+`.msg`/`.srv`/`.action`:
+
+```bash
+colcon build --packages-select my_interfaces
+```
+
+then `:LspRestart` (or reopen the buffer) so clangd/basedpyright pick up the
+regenerated files.
+
+### Extras
+
+- `.msg` / `.srv` / `.action` get highlighting via
+  [nvim-ros2](https://github.com/ErickKramer/nvim-ros2); `.urdf` / `.xacro` /
+  `.sdf` / `*.launch.xml` are treated as XML.
+- Pickers: `<leader>rt` topics, `<leader>rn` nodes, `<leader>rs` services,
+  `<leader>ri` interfaces, `<leader>ra` actions.
+- Fallback flags in `lsp.lua` point clangd at `/opt/ros/$ROS_DISTRO/include`
+  so headers under `/opt/ros` are browsable even without a compile command.

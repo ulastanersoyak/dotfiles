@@ -28,6 +28,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"json",
+				"xml", -- urdf / xacro / sdf / *.launch.xml / package.xml
 				"yaml",
 				"toml",
 				"doxygen", -- ns-3 uses doxygen comments heavily
