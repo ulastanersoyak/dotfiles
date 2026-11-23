@@ -19,8 +19,8 @@ set -u
 # идёт проверка, — что однажды и произошло.
 DRY="${PANACEA_DRYRUN:-0}"
 
-REPO="${PANACEA_REPO:-EnsixD/Panacea}"
-BRANCH="${PANACEA_BRANCH:-main}"
+REPO="${PANACEA_REPO:-ulastanersoyak/Panacea}"
+BRANCH="${PANACEA_BRANCH:-tan}"
 # Откуда тянуть. По умолчанию GitHub; переменной можно подставить локальный
 # путь — на нём же и проверяется вся цепочка, не трогая рабочую систему.
 GIT_URL="${PANACEA_GIT:-https://github.com/$REPO.git}"

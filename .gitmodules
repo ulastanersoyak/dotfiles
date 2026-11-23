@@ -1,0 +1,4 @@
+[submodule ".local/src/Panacea"]
+	path = .local/src/Panacea
+	url = git@github.com:ulastanersoyak/Panacea.git
+	branch = tan
