@@ -4,8 +4,8 @@ local programs = {}
 -- keybindings.lua или autostart.lua: записи, на которые никто не смотрит,
 -- разъезжаются с системой молча — так здесь уже висели меню и повермену
 -- на скриптах, которых нет в репозитории.
-programs.terminal = "alacritty"
-programs.fileManagerTui = "alacritty -e yazi" -- в терминале, на Super+Shift+E
+programs.terminal = "footclient"
+programs.fileManagerTui = "footclient yazi" -- в терминале, на Super+Shift+E
 -- Путь абсолютный, без «~»: exec без шелла тильду не раскрывает, и остров
 -- молча не запускался — после входа оставался чёрный экран.
 --
@@ -14,7 +14,8 @@ programs.fileManagerTui = "alacritty -e yazi" -- в терминале, на Sup
 -- то есть ровно 60 кадров, каким бы ни был монитор: на 144 Гц раскрытие
 -- острова заметно ступенчатое. Threaded берёт такт от vsync и идёт на
 -- частоте экрана (на 144 Гц — 6.94 мс на кадр).
-programs.bar = "env QSG_RENDER_LOOP=threaded qs -c " .. os.getenv("HOME") .. "/.config/panacea" -- пилюля
+programs.bar = "env QSG_RENDER_LOOP=threaded qs -c "
+               .. os.getenv("HOME") .. "/.config/panacea"   -- пилюля
 -- Скриншот области по стоп-кадру: скрипт замораживает экран снимком, а уже по
 -- нему идёт выделение. Иначе меню и подсказки закрываются раньше, чем успеешь
 -- обвести их рамкой. Путь абсолютный: exec без шелла тильду не раскрывает.
