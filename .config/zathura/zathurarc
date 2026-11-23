@@ -1,12 +1,52 @@
-set default-bg "#220f0f"
-set default-fg "#c7c3c3"
-set statusbar-bg "#220f0f"
-set statusbar-fg "#c7c3c3"
-set inputbar-bg "#220f0f"
-set inputbar-fg "#c7c3c3"
-set completion-highlight-bg "#907385"
-set recolor true
-set recolor-lightcolor "#220f0f"
-set recolor-darkcolor "#c7c3c3"
-set recolor-keephue true
-set selection-clipboard clipboard
+# Alduin theme for zathura
+# Palette taken from AlessandroYorba/Alduin (default variant):
+#   bg #1c1c1c · fg #dfdfaf · dark bg #121212 / #080808 · red #af5f5f
+#   dark red #875f5f · orange #dfaf87 · cyan #87afaf · grey #878787
+
+# UI chrome
+set default-bg              "#1c1c1c"
+set default-fg              "#dfdfaf"
+
+set statusbar-bg            "#121212"
+set statusbar-fg            "#9e9e9e"
+
+set inputbar-bg             "#121212"
+set inputbar-fg             "#dfdfaf"
+
+set notification-bg         "#121212"
+set notification-fg         "#dfdfaf"
+set notification-error-bg   "#121212"
+set notification-error-fg   "#af5f5f"
+set notification-warning-bg "#121212"
+set notification-warning-fg "#dfaf87"
+
+# Completion menu (mirrors Alduin's Pmenu / PmenuSel)
+set completion-bg           "#262626"
+set completion-fg           "#dfdfaf"
+set completion-group-bg     "#1c1c1c"
+set completion-group-fg     "#878787"
+set completion-highlight-bg "#875f5f"
+set completion-highlight-fg "#dfdfaf"
+
+# Search / link highlight (Alduin Visual: tan on dark red)
+set highlight-color         "#875f5f"
+set highlight-active-color  "#af5f5f"
+set highlight-transparency  0.5
+
+# Index (outline) mode
+set index-bg                "#1c1c1c"
+set index-fg                "#dfdfaf"
+set index-active-bg         "#875f5f"
+set index-active-fg         "#dfdfaf"
+
+# Recolor: repaint document pages in theme colors
+# (toggle in-app with Ctrl-r)
+set recolor                 true
+set recolor-darkcolor       "#dfdfaf"
+set recolor-lightcolor      "#1c1c1c"
+set recolor-keephue         true
+set recolor-reverse-video   true
+
+# Render loading/progress in theme colors too
+set render-loading-bg       "#1c1c1c"
+set render-loading-fg       "#878787"
